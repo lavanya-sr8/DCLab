@@ -63,7 +63,7 @@ void markAlive(int n, int id){
         if(arr[i].pID == id){
             if(!arr[i].isAlive){
                 arr[i].isAlive = true;
-                printf("Marked process %d as alive", id);
+                printf("Marked process %d as alive\n", id);
                 beginElection(n,id);
                 return;
             }else{
@@ -81,7 +81,7 @@ void markCrashed(int n, int id){
         if(arr[i].pID == id){
             if(arr[i].isAlive){
                 arr[i].isAlive = false;
-                printf("Marked process %d as crashed", id);
+                printf("Marked process %d as crashed\n", id);
                 if(arr[i].pID == coord.pID)
                     coord.isAlive = false;
                 return;
@@ -121,7 +121,7 @@ void sendRequestToCoord(int n, int id){
                     }
                 }
             }else{
-                printf("The requesting process %d is itself not alive and hence cannot send the request to the coordinator\n");
+                printf("The requesting process %d is itself not alive and hence cannot send the request to the coordinator\n",id);
             }
         }
     }

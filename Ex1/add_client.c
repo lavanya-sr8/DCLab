@@ -16,13 +16,13 @@ void add_prog_1(char *host, int x, int y)
 	int *result_1;
 	numbers add_1_arg;
 
-// #ifndef	DEBUG
+#ifndef	DEBUG
 	clnt = clnt_create (host, ADD_PROG, ADD_VERS, "udp");
 	if (clnt == NULL) {
 		clnt_pcreateerror (host);
 		exit (1);
 	}
-// #endif	/* DEBUG */
+#endif	/* DEBUG */
 
 	add_1_arg.a = x;
 	add_1_arg.b = y;
@@ -33,9 +33,9 @@ void add_prog_1(char *host, int x, int y)
 	}else{
 		printf("Result:%d\n",*result_1);
 	}
-// #ifndef	DEBUG
+#ifndef	DEBUG
 	clnt_destroy (clnt);
-// #endif	 /* DEBUG */
+#endif	 /* DEBUG */
 }
 
 
